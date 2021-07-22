@@ -1,0 +1,70 @@
+$--color-primary: #744DFE !default;
+$--color-success: #67c23a !default;
+$--color-waring: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+
+$text-black: #000;
+$width: 31px;
+$height: 29px;
+$white: #fff;
+$text-future: #c0bebe;
+$font-size: 14px;
+
+.sy-time-table {
+  tr {
+    text-align: center;
+    .sy-calendar-header {
+      width: $width;
+      font-size: $font-size;
+      font-weight: 400;
+      cursor: default;
+    }
+    .row-cell {
+      padding: 1px;
+      font-size: $font-size;
+    }
+    .cell {
+      height: 100%;
+      line-height: $height;
+      &:hover {
+          cursor: pointer;
+          color: $white;
+          background-color: $--color-primary;
+          border-radius: 8%;
+      }
+    }
+    .in-month{
+      color: $text-black;
+      border-radius: 8%;      
+    }
+    .out-month {
+      color: #909399;
+      background-color: transparent !important;
+      &:hover {
+        color: #909399 !important;
+      }
+    }
+    .is-select{
+      background-color: $--color-primary !important;
+      border-radius: 10%;
+      color: $white;
+    }
+
+    .is-future {
+      color: $text-future !important;
+      background: none !important;
+      cursor: not-allowed !important;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+    .in-interval {
+      background-color: mix($white, $--color-primary, 40%);
+    }
+    .is-today{
+      border: 1px solid $--color-primary;
+    }
+  }
+}

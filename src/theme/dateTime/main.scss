@@ -1,0 +1,13 @@
+@import url('../var.scss');
+
+.sy-calendar{
+    width: 247px;
+    .calendar-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        svg:hover{
+            cursor: pointer;
+        }
+    }
+}
