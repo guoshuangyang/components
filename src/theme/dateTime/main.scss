@@ -1,13 +1,33 @@
-@import url('../var.scss');
+@import '../var.scss';
 
-.sy-calendar{
+.vcc-calendar{
     width: 247px;
     .calendar-header{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 4px;
-        svg:hover{
-            cursor: pointer;
-        }
+        padding: 4px 1px;
+        position: relative;
+        .date-button-box{
+            display: flex;
+            .date-button{
+                padding: 3px;
+                border: none;
+                background: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    .icon{
+                        fill:$--color-primary;
+                    }
+                }
+            } 
+        }  
+    }
+    .calendar-body{
+        border: 1px solid #efefef;
+        border-radius: 3%;
+        padding: 5px;
     }
 }

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>calendar-panel</title>
-    <link rel="stylesheet" href="./dist/css/main.css">
-  </head>
-  <body>
-    <div id="app">
-      <date-time>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="./dist/test.js"></script>
-    <script>
-      new Vue({
-        el: '#app',
-        data: function() {
-          return { visible: false }
+
+<head>
+  <meta charset="utf-8">
+  <title>calendar-panel</title>
+  <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+
+<body>
+  <div id="app">
+    <vue-calendar-card v-model="temp" />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="./dist/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function () {
+        return {
+          visible: false,
+          temp: new Date(2021,1,1)
         }
-      })
-    </script>
-  </body>
+      }
+    })
+  </script>
+</body>
+
 </html>

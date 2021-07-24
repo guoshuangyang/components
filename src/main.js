@@ -1,26 +1,10 @@
+import App from './App.vue'
+import Vue from 'vue'
+import './theme/dateTime/index.scss'
+Vue.config.productionTip = false;
 
-import DateTime from './dateTime/index.js';
-
-import './theme/dateTime/basic/table.scss'
-const components = [
-  DateTime
-]
-
-const install = function(Vue, opts = {}) {
-  components.forEach(component => {
-    Vue.use(component);
-  })
-}
-
-/* istanbul ignore if */
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
-export default {
-  install,
-  DateTime
-}
-
-
-
+new Vue({
+    router,
+    store,
+    render: h => h(App)
+}).$mount('#app')

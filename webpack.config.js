@@ -2,13 +2,15 @@ var path = require('path')
 var webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const { version, author,license } = require('./package.json')
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'test.js',
-    library: "test", // 指定的就是你使用require时的模块名
+    filename: 'index.js',
+    libraryTarget: 'umd',
+    library: "vueCalendarCard", // 指定的就是你使用require时的模块名
   },
   module: {
     rules: [
@@ -27,7 +29,7 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({   //css的提取
           fallback: "vue-style-loader",
-          use: ['css-loader','sass-loader']
+          use: ['css-loader', 'sass-loader']
         })
         // use: [
         //   'vue-style-loader',
@@ -79,9 +81,9 @@ module.exports = {
       }
     ]
   },
-  externals: {
-    vue: 'Vue'
-  },
+  // externals: {
+  //   vue: 'Vue'
+  // },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
@@ -103,7 +105,7 @@ module.exports = {
     })
   ]
 }
-if(process.env.NODE_ENV === 'development'){
+if (process.env.NODE_ENV === 'development') {
   module.exports.devtool = '#eval-source-map'
 }
 
@@ -125,5 +127,9 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
+    new webpack.BannerPlugin({
+      entryOnly: true, // 是否仅在入口包中输出 banner 信息
+      banner: `vue-calendar-card v${version} \n Author: ${author} \n Date: ${new Date()} \n License: ${license}`
+    })
   ])
 }

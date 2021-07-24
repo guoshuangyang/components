@@ -1,28 +1,26 @@
-$--color-primary: #744DFE !default;
-$--color-success: #67c23a !default;
-$--color-waring: #e6a23c !default;
-$--color-danger: #f56c6c !default;
-$--color-info: #909399 !default;
+@import '../../var.scss';
 
 $text-black: #000;
 $width: 31px;
 $height: 29px;
 $white: #fff;
-$text-future: #c0bebe;
-$font-size: 14px;
+$text-future: #c0ccda;
+$font-size: 12px;
 
-.sy-time-table {
+.vcc-time-table {
+  margin: auto;
   tr {
     text-align: center;
-    .sy-calendar-header {
+    .vcc-calendar-header {
       width: $width;
-      font-size: $font-size;
+      font-size: $font-size + 2px;
       font-weight: 400;
       cursor: default;
     }
     .row-cell {
       padding: 1px;
       font-size: $font-size;
+      font-weight: 300;
     }
     .cell {
       height: 100%;
