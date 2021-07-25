@@ -1,7 +1,7 @@
 {
   "name": "vue-calendar-card",
   "description": "vue2 calendar card",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "gsy-yang <guoshuangyang0@163.com>",
   "license": "MIT",
   "main": "index.js",
@@ -10,6 +10,8 @@
     "calendar",
     "vue2"
   ],
+  "homepage": "https://github.com/guoshuangyang/components",
+  "repository": "https://github.com/guoshuangyang/components",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && cp -r ./src/theme dist && cp package.json dist && cp README.md dist"

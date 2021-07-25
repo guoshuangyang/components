@@ -129,6 +129,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.BannerPlugin({
       entryOnly: true, // 是否仅在入口包中输出 banner 信息
+      test: /\.js$/,
       banner: `vue-calendar-card v${version} \n Author: ${author} \n Date: ${new Date()} \n License: ${license}`
     })
   ])

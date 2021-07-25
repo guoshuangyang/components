@@ -41,7 +41,7 @@ import {
   inDateInterval,
 } from "../../utils/date.js";
 export default {
-  name: "timeTable",
+  name: "vue-calendar-basic-table",
   props: {
     month: {
       type: [Number, String],

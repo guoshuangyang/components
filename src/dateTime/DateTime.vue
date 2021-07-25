@@ -77,25 +77,22 @@
         </button>
       </div>
     </div>
-    <timeTable
+    <vue-calendar-basic-table
       v-bind="$attrs"
       class="calendar-body"
-      @input="$emit('input', $event)"
+      v-model="dateValue"
       @changeMonth="changeMonth"
-      :month.sync="month"
-      :year.sync="year"
-    ></timeTable>
+    ></vue-calendar-basic-table>
   </div>
 </template>
 
 <script>
-import timeTable from "./basic/table";
 export default {
   name: "vue-calendar-card",
-  components: {
-    timeTable,
-  },
   props: {
+    value: {
+      require: true
+    },
     hasPrev: {
       type: Boolean,
       default: true
@@ -103,6 +100,14 @@ export default {
     hasNext: {
       type: Boolean,
       default: true
+    },
+    showYear: {
+      type:Number,
+      default: () => new Date().getFullYear()
+    },
+    showMonth: {
+      type: Number,
+      default: () => new Date().getMonth()
     }
   },
   data() {
@@ -110,6 +115,16 @@ export default {
       year: 2021,
       month: 6,
     };
+  },
+  computed: {
+    dateValue: {
+      get(){
+        return this.value
+      },
+      set(val){
+        this.$emit('input',val)
+      }
+    }
   },
   methods: {
     lastYear() {
@@ -139,6 +154,9 @@ export default {
       }
     },
   },
-  created() {},
+  created() {
+    this.year = this.showYear
+    this.month = this.showMonth
+  },
 };
 </script>
