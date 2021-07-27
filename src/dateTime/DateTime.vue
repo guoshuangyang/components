@@ -81,6 +81,8 @@
       v-bind="$attrs"
       class="calendar-body"
       v-model="dateValue"
+      :year="year"
+      :month="month"
       @changeMonth="changeMonth"
     ></vue-calendar-basic-table>
   </div>

@@ -45,15 +45,11 @@ export default {
   props: {
     month: {
       type: [Number, String],
-      default() {
-        return new Date().getMonth();
-      },
+      require: true,
     },
     year: {
       type: [Number, String],
-      default() {
-        return new Date().getFullYear();
-      },
+      require: true,
     },
     type: {
       type: [String],
