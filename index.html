@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>calendar-panel</title>
-  <link rel="stylesheet" href="  https://cdn.jsdelivr.net/npm/vue-calendar-card@latest/css/main.css">
+  <link rel="stylesheet" href="./dist/css/main.css">
+  <!-- <link rel="stylesheet" href="  https://cdn.jsdelivr.net/npm/vue-calendar-card@latest/css/main.css"> -->
 </head>
 
 <body>
   <div id="app">
-    <vue-calendar-card  type="single" v-model="temp" />
+    <vue-calendar-card v-model="temp" />
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <!-- <script src="./dist/index.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/vue-calendar-card@latest/index.js"></script>
+  <script src="./dist/index.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue-calendar-card@latest/index.js"></script> -->
   <script>
     new Vue({
       el: '#app',
       data: function () {
         return {
-          temp: null
+          temp: []
         }
       }
     })

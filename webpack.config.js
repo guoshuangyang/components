@@ -1,7 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 const { version, author,license } = require('./package.json')
 module.exports = {
   entry: './src/index.js',
@@ -20,10 +19,6 @@ module.exports = {
           fallback: "vue-style-loader",
           use: "css-loader"
         })
-        // use: [
-        //   'vue-style-loader',
-        //   'css-loader'
-        // ],
       },
       {
         test: /\.scss$/,
@@ -31,11 +26,6 @@ module.exports = {
           fallback: "vue-style-loader",
           use: ['css-loader', 'sass-loader']
         })
-        // use: [
-        //   'vue-style-loader',
-        //   'css-loader',
-        //   'sass-loader'
-        // ],
       },
       {
         test: /\.sass$/,
@@ -81,9 +71,9 @@ module.exports = {
       }
     ]
   },
-  // externals: {
-  //   vue: 'Vue'
-  // },
+  externals: {
+    vue: 'Vue'
+  },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
