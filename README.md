@@ -59,14 +59,35 @@ $--color-primary: #744DFE;
 
 ### 属性
 
-| 属性          | 说明                       | 可选         | 默认                     | 类型        |
-| ------------- | -------------------------- | ------------ | ------------------------ | ----------- |
-| type          | 日历的类型                 | 'single'     | 'dateInterval'           | String      |
-| V-model/value | 绑定的值                   | 值为Date对象 | new Date()               | Date/Date[] |
-| hasPrev       | 是否显示上个月上一年的按钮 | false        | true                     | Boolean     |
-| hasNext       | 是否显示下一年的按钮       | false        | true                     | Boolean     |
-| showYear      | 想要显示的年份             | 2021         | new Date().getFullYear() | Number      |
-| showMonth     | 想要显示的月份             | 1/2/3...     | new Date().getMonth()    | Number      |
+| 属性           | 说明                       | 可选         | 默认                     | 类型        |
+| -------------- | -------------------------- | ------------ | ------------------------ | ----------- |
+| type           | 日历的类型                 | 'single'     | 'dateInterval'           | String      |
+| v-model/value  | 绑定的值                   | 值为Date对象 | new Date()               | Date/Date[] |
+| hasPrev        | 是否显示上个月上一年的按钮 | false        | true                     | Boolean     |
+| hasNext        | 是否显示下一年的按钮       | false        | true                     | Boolean     |
+| showYear.sync  | 想要显示的年份             | 2021         | new Date().getFullYear() | Number      |
+| showMonth.sync | 想要显示的月份             | 1/2/3...     | new Date().getMonth()    | Number      |
+
+### 双月份的使用
+
+使用
+
+```html
+<div id="app">
+    <vue-calendar-card-range  v-model="temp" />
+</div>
+```
+
+
+
+#### 属性
+
+| 属性          | 说明     | 可选         | 默认 | 类型   |
+| ------------- | -------- | ------------ | ---- | ------ |
+| v-model/value | 绑定的值 | 值为Date对象 | []   | Date[] |
+
+
+
 
 ## License
 

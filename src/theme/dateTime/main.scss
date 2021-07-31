@@ -22,12 +22,18 @@
                         fill:$--color-primary;
                     }
                 }
-            } 
-        }  
+            }
+        }
     }
     .calendar-body{
         border: 1px solid #efefef;
         border-radius: 3%;
         padding: 5px;
     }
+}
+.vcc-calendar-card-range{
+  display: flex;
+  & .vcc-calendar:nth-child(2){
+    margin-left: 10px;
+  }
 }

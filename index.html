@@ -9,7 +9,7 @@
 
 <body>
   <div id="app">
-    <vue-calendar-card v-model="temp" />
+    <vue-calendar-card-range v-model="temp" />
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="./dist/index.js"></script>
@@ -19,7 +19,7 @@
       el: '#app',
       data: function () {
         return {
-          temp: []
+          temp: [new Date(2020,1,2),new Date(2021,6,2)]
         }
       }
     })

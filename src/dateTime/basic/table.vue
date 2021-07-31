@@ -85,7 +85,7 @@ export default {
         { title: "周六", text: "六" },
         { title: "周日", text: "日" },
       ],
-      dateArr: [new Date(2021, 1, 1), new Date(2021, 5, 18)],
+      dateArr: [],
     };
   },
   methods: {
@@ -106,14 +106,14 @@ export default {
         case "dateInterval":
           if (this.value.length === 1) {
             if (isDateBefore(this.value[0], today)) {
-              this.dateArr = [this.value[0], today];
+              // this.dateArr = [this.value[0], today];
               this.$emit("input", [this.value[0], today]);
             } else {
-              this.dateArr = [today, this.value[0]];
+              // this.dateArr = [today, this.value[0]];
               this.$emit("input", [today, this.value[0]]);
             }
           } else {
-            this.dateArr = [today];
+            // this.dateArr = [today];
             this.$emit("input", [today]);
           }
           break;
@@ -137,11 +137,11 @@ export default {
             }
             break;
           case "dateInterval":
-            if (this.dateArr.length === 2) {
-              if (inDateInterval(this.dateArr, itemDate))
+            if (this.value.length === 2) {
+              if (inDateInterval(this.value, itemDate))
                 arr.push("in-interval");
             }
-            if (this.dateArr.find((item1) => isSameDate(item1, itemDate))) {
+            if (this.value.find((item1) => isSameDate(item1, itemDate))) {
               arr.push("is-select");
             }
             break;
