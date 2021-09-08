@@ -93,7 +93,7 @@ export const getNext2Week = (year, month) => {
  * 获取日历的42个内容
  * @param {Number|String} year
  * @param {Number|String} month
- * @param {String} type 'arr2' 二位数数组
+ * @param {String} type 'arr2' 二维数组
  * @returns Date[]
  */
 export const getRows = (year, month, type = 'arr2') => {
